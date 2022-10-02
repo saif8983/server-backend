@@ -10,9 +10,6 @@ app.use(bodyparser.json({limit: '50mb'}));
 app.use(bodyparser.urlencoded({limit: '50mb', extended: true}));
 app.use(cors())
 app.use('/router',router)
-if (process.env.NODE_ENV == "production"){
-    app.use(express.static("client/build"));
-}
 app.listen(port,()=>{
     console.log('connected',`${port}`)
 })
